@@ -25,15 +25,13 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 
         Object.values(response.data.articles).forEach(subject => {
             subject.forEach(article => {
-                console.log(article)
+                const newCard = cardMaker(article)
+                cardContainer.appendChild(newCard)
             })
         })
     })
     .catch(error => {
         console.log(`Uh oh: ${error}`)
-    })
-    .finally(()=> {
-        console.log('done')
     })
 
     function cardMaker(topic){
@@ -61,7 +59,5 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         author.append(imageCon, name)
         imageCon.appendChild(image)
 
-        console.log(card)
+        return card
     }
-
-    cardMaker({headline: "AI: What Are the Ethical Ramifications of the Future?", authorPhoto: "./assets/max.jpg", authorName: "MAX GOODBOYE"})
