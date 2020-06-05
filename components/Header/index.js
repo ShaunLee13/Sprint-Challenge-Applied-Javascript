@@ -18,6 +18,12 @@ function Header() {
     const heading = document.createElement('h1')
     const temp = document.createElement('span')
 
-
+    //Assign Classes and Content
+    header.classList.add('header')
+    date.classList.add('date')
+    temp.classList.add('temp')
+    date.textContent = 'March 28, 2019'
+    heading.textContent = 'Lambda Times'
+    temp.textContent = '98°'
 
 }
