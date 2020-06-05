@@ -43,21 +43,25 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         const card = document.createElement('div')
         const heading = document.createElement('div')
         const author = document.createElement('div')
-        const imageCon = document.createElement('img')
-        const image = document.createElement('div')
+        const imageCon = document.createElement('div')
+        const image = document.createElement('img')
         const name = document.createElement('span')
 
+        //Assign Classes & TextContent
+        card.classList.add('card')
+        heading.classList.add('headline')
+        author.classList.add('author')
+        imageCon.classList.add('img-container')
+        heading.textContent = headline
+        image.src = authorPhoto
+        name.textContent = `By ${authorName}`
 
+        //Append Comps
+        card.append(heading, author)
+        author.append(imageCon, name)
+        imageCon.appendChild(image)
 
+        console.log(card)
     }
 
     cardMaker({headline: "AI: What Are the Ethical Ramifications of the Future?", authorPhoto: "./assets/max.jpg", authorName: "MAX GOODBOYE"})
-//  <div class="card">
-//   <div class="headline">{Headline of article}</div>
-//   <div class="author">
-//     <div class="img-container">
-//       <img src={url of authors image} />
-//     </div>
-//     <span>By {author's name}</span>
-//   </div>
-// </div>
