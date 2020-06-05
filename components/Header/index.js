@@ -10,6 +10,7 @@
 //
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
+const headerContainer = document.querySelector('.header-container')
 
 function Header() {
     //Declare & Create variables
@@ -26,4 +27,11 @@ function Header() {
     heading.textContent = 'Lambda Times'
     temp.textContent = '98°'
 
+    //Header Skeleton
+    header.append(date, heading, temp)
+
+    return header
 }
+
+const newHeader = Header()
+headerContainer.appendChild(newHeader)
