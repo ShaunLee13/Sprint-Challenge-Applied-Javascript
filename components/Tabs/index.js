@@ -18,11 +18,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
             tab.textContent = topic
             topicsDiv.appendChild(tab)
         })
-        console.log(`Here's your response: ${response.data.topics}`)
     })
     .catch(error => {
         console.log(`Uh oh: ${error}`)
-    })
-    .finally(() => {
-        console.log('done')
     })
